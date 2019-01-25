@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700|Oswald:300,200,700|Lato:300');
 
+:root
+{
+    --main-color: #AD2333;
+    --dark-text: #424242;
+}
 *
 {
     margin: 0;
@@ -18,7 +23,64 @@ body
     font-weight: 300;
 }
 
+/*******************************************************************************************
+                                            General Styles
+*******************************************************************************************/
+/* Page Heading  */
+.content-heading
+{
+    margin-top: 80px;
+    margin-bottom: 60px;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 
+.content-heading h1
+{
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 6.5em;
+    color: var(--main-color);
+    padding: 0px 30px;
+}
+.content-heading .line
+{
+    background-color: var(--main-color);
+    width: 200px;
+    height: 6px;
+
+}
+
+/* Page Content  */
+
+.page-content
+{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+.page-content h1,h2,h3,h4,h5,h6
+{
+    color: var(--dark-text);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    
+}
+
+.page-content p
+{
+    margin-bottom: 20px;
+    font-size: 27px;
+    font-weight: 300;
+    font-family: 'Roboto';
+    text-indent: 50px;
+}
 /*******************************************************************************************
                                             HOME PAGE
 *******************************************************************************************/
@@ -66,6 +128,6 @@ body
 
 .landing-content span
 {
-    color: #AD2333;
+    color: var(--main-color);
     font-weight: bold;
 }
