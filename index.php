@@ -3,7 +3,7 @@
 
 
     <?php 
-        $styleString;
+        $styleString = '';
         $styleString .= "background-image:url('";
         $styleString .= has_header_image() ? get_header_image() : get_theme_support( 'custom-header', 'default-image' ) . "')";
 
