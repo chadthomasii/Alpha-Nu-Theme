@@ -4,6 +4,11 @@
 nav
 {
     box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+    background-color: var(--dark-text);
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    top: 0;
   
 }
 
@@ -13,7 +18,6 @@ ul {
     margin: 0 auto;
     padding: 0;
     list-style-type: none;
-    background: #fff;
     position: relative;
     max-width: 1200px;
 
@@ -51,15 +55,15 @@ ul li {
 }
  
 ul li a {
-      color: var(--main-color);
+      color: #fff;
       text-decoration: none;
-      padding: 30px 15px;
+      padding: 20px 15px;
       display: block;
       font-size: 1.5em;
 }
  
 ul li:hover {
-    background-color: #f3f3f3;
+    background-color: var(--main-color);
 }
 
  
@@ -80,7 +84,7 @@ ul li:hover ul {
 }
  
 ul li i {
-      color: var(--main-color);
+      color: #fff;
       float: right;
       padding-left: 5px;
 }
@@ -98,6 +102,7 @@ nav div {
 {
     nav div {
         display: block;
+        width: 100%;
     }
 
     nav div::after 
@@ -163,8 +168,8 @@ nav div {
         <i class="fa fa-bars"></i>
     </div>
 
-
         <?php 
+        
             wp_nav_menu(array(
                 'theme_location' => 'primary',
                 'container' => false,
