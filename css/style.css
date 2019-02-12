@@ -29,7 +29,7 @@ body
 /* Page Heading  */
 .content-heading
 {
-    margin-top: 160px;
+    margin-top: 180px;
     margin-bottom: 60px;
     width: 100%;
     display: flex;
@@ -109,7 +109,7 @@ body
     align-items: center;
     background-repeat: no-repeat;
     background-position-x: 50%;
-    background-position-y: 50%;
+    background-position-y: 80%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.70));
 
 }

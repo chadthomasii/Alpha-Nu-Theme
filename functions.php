@@ -83,4 +83,13 @@ function alphanu_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'alphanu_custom_header_setup' );
 
+function theme_slug_setup() {
+    add_theme_support('custom-logo', array(
+        'height' => 100,
+        'width' => 300,
+        'flex-width' => true,
+        'flex-height' => true,
+    ));
+}
+add_action('after_setup_theme', 'theme_slug_setup');
 

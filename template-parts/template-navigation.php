@@ -12,6 +12,21 @@ nav
   
 }
 
+.front-page
+{
+    background:transparent;
+}
+.front-page ul li:hover
+{
+    background-color: transparent;
+}
+
+.front-page ul li a:hover
+{
+    color: var(--main-color);
+
+}
+
 
 
 ul {
@@ -19,7 +34,7 @@ ul {
     padding: 0;
     list-style-type: none;
     position: relative;
-    max-width: 1200px;
+    text-align: center;
 
 }
 
@@ -31,11 +46,6 @@ ul {
   display: table;
 }
 
-.main-menu > li
-{
-    float: right;
-}
-
 
 ul section
 {
@@ -44,22 +54,25 @@ ul section
     margin-left: 15px;
 }
 
-ul section h1
-{
-    font-family: "Pacifico";
-    font-size: 28px;
-}
  
-ul li {
-      display: inline-block;
+ul li 
+{
+    display: inline-block;
 }
  
 ul li a {
       color: #fff;
       text-decoration: none;
-      padding: 20px 15px;
+      margin: 20px 25px;
       display: block;
-      font-size: 1.5em;
+      font-size: 2.5em;
+      text-transform: uppercase;
+      font-weight: 200;
+}
+
+.main-menu li:last-child
+{
+    margin-right: 100px;
 }
  
 ul li:hover {
@@ -89,15 +102,18 @@ ul li i {
       padding-left: 5px;
 }
  
-nav div {
-      background: #fff;
-      color: var(--text-color);
-      font-size: 24px;
-      padding: 0.6em;
-      cursor: pointer;
-      display: none;
+nav div 
+{
+    float: left;
+    margin-left: 20px;
 }
  
+nav div img
+{
+    height: 90px;
+    width: 80px;
+    margin-top: 4px;
+}
 @media(max-width: 768px) 
 {
     nav div {
@@ -115,15 +131,6 @@ nav div {
     nav div i 
     {
         font-size: 40px;
-    }
-
-    nav div h1 
-    {
-        float: right;
-        color: var(--main-color);
-        font-family: "Pacifico";
-        font-size: 23px;
-        margin-right: 20px;
     }
 
     ul {
@@ -159,16 +166,29 @@ nav div {
 
 </style>
 
-<nav>
-
+<nav 
+<?php
+    if(is_front_page())
+    {
+        echo ' class="front-page"';
+    }
+?>
+>
     
 
     <div>
-        <h1 class="logo-text">Swati</h1>
-        <i class="fa fa-bars"></i>
+        <?php 
+
+            if (function_exists('the_custom_logo')) 
+            {
+                the_custom_logo();
+            } 
+        ?>    
     </div>
 
         <?php 
+
+            
         
             wp_nav_menu(array(
                 'theme_location' => 'primary',
@@ -177,5 +197,7 @@ nav div {
                 )
             );
         ?>
+
+
         
 </nav>
