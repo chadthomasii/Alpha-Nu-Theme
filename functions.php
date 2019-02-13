@@ -59,6 +59,8 @@ add_action('init', 'custom_theme_setup');
 	==========================================
 */
 
+add_theme_support( 'post-thumbnails'); 
+
 register_default_headers( array(
     'default-image' => array(
         'url'           => '%s/img/landing.jpg',

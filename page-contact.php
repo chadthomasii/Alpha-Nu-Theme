@@ -1,13 +1,8 @@
 <?php get_header(); ?>
 
 
-    <div class="content-heading animated fadeInDown">
-        <div class="line"></div>
-        <div>
-            <h1>Contact</h1>
-        </div>
-        <div class="line"></div>
-    </div>
+    <?php get_template_part('template-parts/template','heading'); ?>
+
 
     <div class="contact-content">
 

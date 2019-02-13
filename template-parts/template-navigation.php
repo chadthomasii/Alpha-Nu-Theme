@@ -15,6 +15,7 @@ nav
 .front-page
 {
     background:transparent;
+    box-shadow: none;
 }
 .front-page ul li:hover
 {

@@ -136,7 +136,7 @@ body
 
 
 /*******************************************************************************************
-                                            Contact PAGE
+                                            Contact Page
 *******************************************************************************************/
 
 .contact-content
@@ -191,4 +191,118 @@ body
 .social-contact a:hover
 {
     transform: scale(1.1);
+}
+
+/*******************************************************************************************
+                                            Officers Page
+*******************************************************************************************/
+
+.officer-content
+{
+    margin-top: 30px;
+    animation-delay: 0.7s;
+}
+.officer-section
+{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-delay: 0.7s;
+
+}
+.officer-section .officer-information h1
+{
+    font-family: 'Oswald';
+    font-weight: 300;
+    font-size: 3.2em;
+}
+
+.officer-section .officer-information h2
+{
+    font-family: 'Roboto';
+    font-size: 1.5em;
+    margin: 7px 0px;
+}
+
+.officer-section .officer-information h2,p
+{
+    font-family: 'Roboto';
+}
+
+/* RED SECTION */
+.officer-section:nth-child(odd)
+{
+    background-color: #AD2333;
+
+}
+
+.officer-section:nth-child(odd) .officer-information h1, h2, p
+{
+    color: #fff;
+}
+
+.officer-section .officer-information p:nth-child(odd)
+{
+    margin-right: 70px;
+}
+
+/* WHITE SECTION */
+.officer-section:nth-child(even)
+{
+    background-color: #fff;
+
+}
+
+.officer-section:nth-child(even) .officer-information h1
+{
+    color: #AD2333;
+}
+
+.officer-section:nth-child(even) .officer-information h2
+{
+    color: #4A4A4A;
+}
+
+.officer-section:nth-child(even) .officer-information p
+{
+    color: #4A4A4A;
+    margin-right: 0px;
+}
+
+.officer-section:nth-child(even) .officer-information
+{
+    order: 1;
+    padding-left: 70px;
+}
+
+.officer-section:nth-child(even) .officer-picture
+{
+    order: 2;
+    width: 370px;
+    height: 355px;
+    padding-right: 0px;
+}
+
+
+
+/* END SECTION */
+
+
+.officer-picture
+{
+    text-align: center;
+    padding-right: 70px;
+}
+
+.officer-information
+{
+    width: 60%;
+    max-width: 750px;
+}
+.diamond 
+{
+    width: 300px;
+    height: 350px;
 }
