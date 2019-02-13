@@ -117,52 +117,7 @@ nav div img
 }
 @media(max-width: 768px) 
 {
-    nav div {
-        display: block;
-        width: 100%;
-    }
 
-    nav div::after 
-    {
-    content: "";
-    clear: both;
-    display: table;
-    }
-
-    nav div i 
-    {
-        font-size: 40px;
-    }
-
-    ul {
-        display: none;
-        position: static;
-        background: #fff;
-    }
-
-    ul section 
-    {
-        display: none;
-    }
-
-    .main-menu > li
-    {
-        float: none;
-    }
-
-    .main-menu > li:nth-child(2)
-    {
-        margin-right: 0px;
-    }
-
-    ul li {
-        display: block;
-    }
-
-    ul ul {
-        position: static;
-        background: #fff;
-    }
 }
 
 </style>
@@ -198,7 +153,5 @@ nav div img
                 )
             );
         ?>
-
-
-        
+      
 </nav>

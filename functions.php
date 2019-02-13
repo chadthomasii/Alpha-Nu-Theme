@@ -5,7 +5,7 @@
 	 Include scripts
 	==========================================
 */
-function custom_script_enqueue() 
+function alphanu_script_enqueue() 
 {
 	//css
 	wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', '1.0.0', 'all');
@@ -31,25 +31,6 @@ function custom_script_enqueue()
 	
 }
 
-add_action( 'wp_enqueue_scripts', 'custom_script_enqueue');
-
-
-
-/*
-	==========================================
-	 Activate Menus
-	==========================================
-*/
-
-function custom_theme_setup()
-{
-	
-	add_theme_support('menus');
-	
-	register_nav_menu('primary', 'Primary Header Navigation');	
-}
-
-add_action('init', 'custom_theme_setup');
 
 
 
@@ -59,39 +40,72 @@ add_action('init', 'custom_theme_setup');
 	==========================================
 */
 
-add_theme_support( 'post-thumbnails'); 
-
-register_default_headers( array(
-    'default-image' => array(
-        'url'           => '%s/img/landing.jpg',
-        'thumbnail_url' => '%s/img/landing.jpg',
-        'description'   => __( 'headerimage', 'alphanu' )
-        ),
-	) );
+//Menu Setup on Init
+function alphanu_menu_setup()
+{
 	
+	add_theme_support('menus');
+	
+	register_nav_menu('primary', 'Primary Header Navigation');	
+}
 
-
-function alphanu_custom_header_setup() {
-    $args = array(
-        'default-image'      => get_template_directory_uri() . '/img/landing.jpg',
+//Theme Support
+function alphanu_theme_support() 
+{
+	//Custom Logo
+	add_theme_support('custom-logo', array(
+        'height' => 100,
+        'width' => 80,
+        'flex-width' => true,
+        'flex-height' => true,
+	));
+	
+	//Custom Header
+	add_theme_support( 'custom-header', array(
         'width'              => 1200,
         'height'             => 720,
         'flex-width'         => true,
 		'flex-height'        => true,
 		'header-text' 		 => true,
-
-    );
-    add_theme_support( 'custom-header', $args );
-}
-add_action( 'after_setup_theme', 'alphanu_custom_header_setup' );
-
-function theme_slug_setup() {
-    add_theme_support('custom-logo', array(
-        'height' => 100,
-        'width' => 300,
-        'flex-width' => true,
-        'flex-height' => true,
     ));
+	
+	//Post Thumbnails
+	add_theme_support( 'post-thumbnails'); 
+
 }
-add_action('after_setup_theme', 'theme_slug_setup');
+
+
+//Customize Register
+function alphanu_customize_register($wp_customize) 
+{
+	$wp_customize->add_section('main_color', array(
+		'title' => __('Main Theme Color', 'Alpha Nu'),
+		'priority' => 1
+	));
+
+	$wp_customize->add_setting('main_color', array(
+		'default' => '#AD2333',
+		'transport' => 'refresh'
+
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'main_color', array(
+		'label' => __("Main Theme Color", "Alpha Nu"),
+		'section' => 'main_color',
+		'settings' => 'main_color'
+	)));
+}
+
+
+/*
+	==========================================
+	 Add Actions
+	==========================================
+*/
+
+add_action( 'wp_enqueue_scripts', 'alphanu_script_enqueue');
+add_action('init', 'alphanu_menu_setup');
+add_action('after_setup_theme', 'alphanu_theme_support');
+add_action('customize_register', 'alphanu_customize_register');
+
 
