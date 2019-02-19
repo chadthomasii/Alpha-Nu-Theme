@@ -73,7 +73,7 @@ ul li a {
 
 .main-menu li:last-child
 {
-    margin-right: 100px;
+    margin-right: 80px;
 }
  
 ul li:hover {
@@ -106,7 +106,6 @@ ul li i {
 nav div 
 {
     float: left;
-    margin-left: 20px;
 }
  
 nav div img
@@ -114,6 +113,7 @@ nav div img
     height: 90px;
     width: 80px;
     margin-top: 4px;
+    margin-left: 20px;
 }
 @media(max-width: 768px) 
 {

@@ -65,8 +65,7 @@ function alphanu_theme_support()
         'width'              => 1200,
         'height'             => 720,
         'flex-width'         => true,
-		'flex-height'        => true,
-		'header-text' 		 => true,
+				'flex-height'        => true,
     ));
 	
 	//Post Thumbnails
@@ -75,13 +74,20 @@ function alphanu_theme_support()
 }
 
 
-//Customize Register
+/*
+	==========================================
+	 Customize Register
+	==========================================
+*/
 function alphanu_customize_register($wp_customize) 
 {
-	$wp_customize->add_section('main_color', array(
-		'title' => __('Main Theme Color', 'Alpha Nu'),
+	//Sections
+	$wp_customize->add_section('theme_color', array(
+		'title' => __('Theme Colors', 'Alpha Nu'),
 		'priority' => 1
 	));
+
+	//Settings
 
 	$wp_customize->add_setting('main_color', array(
 		'default' => '#AD2333',
@@ -89,10 +95,22 @@ function alphanu_customize_register($wp_customize)
 
 	));
 
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'main_color', array(
+	$wp_customize->add_setting('dark_text', array(
+		'default' => '#4A4A4A',
+		'transport' => 'refresh'
+	));
+
+	//Controllers
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'theme_color', array(
 		'label' => __("Main Theme Color", "Alpha Nu"),
-		'section' => 'main_color',
+		'section' => 'theme_color',
 		'settings' => 'main_color'
+	)));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'dark_text', array(
+		'label' => __("Dark Text Color", "Alpha Nu"),
+		'section' => 'theme_color',
+		'settings' => 'dark_text'
 	)));
 }
 

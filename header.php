@@ -12,7 +12,7 @@
             :root
             {
                 --main-color: <?php echo get_theme_mod('main_color', '#AD2333');?>;
-                --dark-text: #4A4A4A;
+                --dark-text: <?php echo get_theme_mod('dark_text', '#4A4A4A');?>
             }
         </style>
         

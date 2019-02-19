@@ -152,7 +152,7 @@ body
     width: 50%;
     text-align: center;
     animation-delay: 0.7s;
-    color: #4A4A4A;
+    color: var(--dark-text);
 }
 
 .contact-section h1
@@ -164,7 +164,7 @@ body
 
 .contact-section p
 {
-    color: #4A4A4A;
+    color: var(--dark-text);
     font-size: 2em;
     font-family: 'Roboto';
 }
@@ -262,12 +262,12 @@ body
 
 .officer-section:nth-child(even) .officer-information h2
 {
-    color: #4A4A4A;
+    color: var(--dark-text);
 }
 
 .officer-section:nth-child(even) .officer-information p
 {
-    color: #4A4A4A;
+    color: var(--dark-text);
     margin-right: 0px;
 }
 
@@ -383,7 +383,7 @@ body
     .history p
     {
         font-size: 1.7em;
-        color: #424242;
+        color: var(--dark-text);
         margin: 20px 80px;
         text-indent: 60px;
     }
