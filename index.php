@@ -21,7 +21,7 @@
                 if ( $description || is_customize_preview() ) :
             ?>
                 <h1 class= "animated fadeInUp">                    
-                    <?php echo $description; ?>
+                    <?php echo get_theme_mod('site_title'); ?>
                 </h1>            
             <?php endif; ?>
             

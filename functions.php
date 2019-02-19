@@ -87,6 +87,11 @@ function alphanu_customize_register($wp_customize)
 		'priority' => 1
 	));
 
+	$wp_customize->add_section('site_title', array(
+		'title' => __('Change Site Title', 'Alpha Nu'),
+		'priority' => 2
+	));
+
 	//Settings
 
 	$wp_customize->add_setting('main_color', array(
@@ -100,6 +105,12 @@ function alphanu_customize_register($wp_customize)
 		'transport' => 'refresh'
 	));
 
+	$wp_customize->add_setting('site_title', array(
+		'default' => 'Site Title Here',
+		'transport' => 'refresh'
+	));
+
+
 	//Controllers
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'theme_color', array(
 		'label' => __("Main Theme Color", "Alpha Nu"),
@@ -111,6 +122,12 @@ function alphanu_customize_register($wp_customize)
 		'label' => __("Dark Text Color", "Alpha Nu"),
 		'section' => 'theme_color',
 		'settings' => 'dark_text'
+	)));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'site_title', array(
+		'label' => __("Change Title", "Alpha Nu"),
+		'section' => 'site_title',
+		'settings' => 'site_title'
 	)));
 }
 
