@@ -19,10 +19,10 @@ function alphanu_script_enqueue()
 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
 
 	wp_register_script( 
-        'nav', 
-        get_template_directory_uri() . '/js/nav.js', 
-		array( 'jquery' ),
-		'1.0.0'
+				'nav', 
+				get_template_directory_uri() . '/js/nav.js', 
+				array( 'jquery' ),
+				'1.0.0'
 		
     );
 	wp_enqueue_script('nav');
