@@ -3,13 +3,23 @@
 
 nav
 {
-    box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
     background-color: var(--dark-text);
     position: absolute;
     width: 100%;
     z-index: 10;
     top: 0;
   
+}
+
+.nav-mobile-bar
+{
+    display:none;
+}
+
+.nav-close
+{
+    display: none;
 }
 
 .front-page
@@ -115,12 +125,117 @@ nav div img
     margin-top: 4px;
     margin-left: 20px;
 }
-@media(max-width: 768px) 
+
+@media(max-width: 1200px) 
 {
+    ul li a
+    {
+        margin: 27px 15px;
+        font-size: 1.9em;
+    }
 
 }
 
+@media(max-width: 900px) 
+{
+    ul li a
+    {
+        margin: 27px 10px;
+        font-size: 1.6em;
+    }
+}
+
+@media(max-width: 768px) 
+{
+  nav
+  {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+      box-shadow: none;
+  }
+  
+  .nav-mobile-bar
+  {
+      display: block;
+      z-index: 10;
+      height: 100px;
+      width: 100%;
+      background-color: var(--dark-text);
+      position: absolute;
+      top: 0;
+      box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+
+  }
+
+  .front-page
+  {
+      background-color: var(--dark-text);
+  }
+
+  .nav-active
+  {
+      transform: translateX(0%);
+  }
+
+  
+  nav div
+  {
+      float: none;
+      clear: both;
+  }
+
+  nav div:after
+  {
+      content: "";
+      clear: both;
+      display: table;
+
+  }
+
+  nav div img
+  {
+      margin: 0;
+      margin-left: 20px;
+      float: left;
+      
+  }
+
+  .nav-close
+  {
+      display: initial;
+      font-size: 3em;
+      color: #fff;
+      float: right;
+      margin-right: 20px;
+      margin-top: 25px;
+  }
+
+
+  .main-menu li
+  {
+      display: block;
+      width: 100%;
+  }
+
+    ul li a
+    {
+      margin: 20px 25px;
+      font-size: 2.2em;
+    }
+}
+
 </style>
+
+
+<div class="nav-mobile-bar nav-toggle">
+    <i class="fas fa-bars nav-close"></i>
+</div>
 
 <nav 
 <?php
@@ -140,6 +255,9 @@ nav div img
                 the_custom_logo();
             } 
         ?>    
+
+        <i class="fa fa-bars nav-close nav-toggle "></i>
+
     </div>
 
         <?php 
