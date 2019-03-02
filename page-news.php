@@ -35,21 +35,35 @@
             <?php 
             
                 $category = get_the_category();
-                $firstCategory;
-                if(!empty($category))
+                $categories = '';
+              
+
+                //Get the categories of category element, loop through them
+                for($i = 0; $i < count($category); $i++)
                 {
-                    $firstCategory = $category[0]->cat_name;
-                }
-                else 
-                {
-                    $firstCategory = 'No Category';              
+                    if($i < 2)
+                    {
+                            //Does not add a "|" to the last element in the array
+                        if($i != key(end($category)) || count($category) <= 1)
+                        {
+                            $categories .= $category[$i]->name .= " "; 
+                        }
+
+                        else
+                        {
+                            $categories .= $category[$i]->name . ' | ';
+                        }
+                    }
+                    
+
                 }
 
-            
+                
+                // var_dump($category);
             ?>
             
             <div class="featured-article-date">
-                <p><?php the_time('M')?> // <?php echo $firstCategory; ?> </p>
+                <p><?php the_time('M')?> // <?php echo $categories; ?> </p>
             </div>
 
             
