@@ -132,6 +132,12 @@ function alphanu_customize_register($wp_customize)
 }
 
 
+//Shortening the exceprt
+function alphanu_excerpt_length( $length ) {
+	return 35;
+}
+add_filter( 'excerpt_length', 'alphanu_excerpt_length', 999 );
+
 /*
 	==========================================
 	 Add Actions
