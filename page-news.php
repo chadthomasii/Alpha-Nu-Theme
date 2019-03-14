@@ -2,24 +2,36 @@
 
 <?php get_template_part('template-parts/template','heading'); ?>
 
+<?php 
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    $query = new WP_Query( array( 'post_type' => 'post',
+                                  'posts_per_page' => '1',) ); // Post loop settings ?> 
 
+<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-<div class="news-featured-image" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<?php the_post_thumbnail_url()?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">
-   
-    <div>
-        <?php the_content(); ?>
-    </div>
+<a href="<?php echo get_permalink()?>">
+    <div class="news-featured-image" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<?php the_post_thumbnail_url()?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">
     
-</div>
+        <div>
+            <h1><?php the_title(); ?></h1>
+        </div>
+        
+    </div>
+</a>
 
 <?php endwhile; endif; ?>
 
 <div class="featured-articles">
 
-    <?php $query = new WP_Query( array( 'post_type' => 'post',
-                                        'posts_per_page' => '3') ); // Post loop settings ?> 
+    
+    <?php 
+
+        $cat = get_category_by_slug("featured");
+
+    
+        $query = new WP_Query( array( 'post_type' => 'post',
+                                        'posts_per_page' => '3',
+                                        'category__not_in' => $cat->term_id) ); // Post loop settings ?> 
     
    
     <?php  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); //Start the post loop?> 
