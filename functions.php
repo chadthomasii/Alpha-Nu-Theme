@@ -133,10 +133,55 @@ function alphanu_customize_register($wp_customize)
 
 
 //Shortening the exceprt
-function alphanu_excerpt_length( $length ) {
+function alphanu_excerpt_length( $length ) 
+{
 	return 35;
 }
+
 add_filter( 'excerpt_length', 'alphanu_excerpt_length', 999 );
+
+//Removing Prefix of Archive Title
+
+add_filter( 'get_the_archive_title', function ($title) 
+{
+
+	if ( is_category() ) 
+	{
+
+			$title = single_cat_title( '', false );
+
+	} 
+	
+	elseif ( is_tag() ) 
+	{
+
+			$title = single_tag_title( '', false );
+
+	} 
+	
+	elseif ( is_author() ) 
+	{
+
+			$title = get_the_author();
+
+	}
+	elseif ( is_year() ) 
+	{
+		$title = get_the_date( _x( 'Y', '') );
+	} 
+	
+	elseif ( is_month() ) 
+	{
+		$title = get_the_date( _x( 'F Y', '' ) );
+	} 
+	
+	elseif ( is_day() ) 
+	{
+		$title = get_the_date( _x( 'F j, Y', '') );
+	}
+	return $title;
+
+});
 
 /*
 	==========================================

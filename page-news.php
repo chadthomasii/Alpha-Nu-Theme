@@ -2,6 +2,7 @@
 
 <?php get_template_part('template-parts/template','heading'); ?>
 
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 
@@ -18,7 +19,7 @@
 <div class="featured-articles">
 
     <?php $query = new WP_Query( array( 'post_type' => 'post',
-                                            'posts_per_page' => '3') ); // Post loop settings ?> 
+                                        'posts_per_page' => '3') ); // Post loop settings ?> 
     
    
     <?php  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); //Start the post loop?> 
@@ -78,68 +79,11 @@
 
     <?php endif; wp_reset_postdata(); // Clost loop, if, post data settings ?> 
     
-    <!-- <div class="featured-article">
+   
+</div>
 
-        <div class="featured-article-image" style="background:url('<?php the_post_thumbnail_url()?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div>
-
-        <div class="featured-article-body">
-            <h3>Alpha Nu's Polemarch on Watch The Yard</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Tenetur, reiciendis? Consequatur magni nesciunt vel! 
-                Architecto ut dicta nesciunt quod et consequuntur corporis sed cum voluptatem quidem. 
-                Unde ea porro voluptas!
-            </p>
-        </div>
-
-        <div class="featured-article-date">
-            <p>May // Polemarch</p>
-        </div>
-
-        
-    </div>
-
-    <div class="featured-article">
-
-        <div class="featured-article-image" style="background:url('<?php the_post_thumbnail_url()?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div>
-
-        <div class="featured-article-body">
-            <h3>Alpha Nu's Polemarch on Watch The Yard</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Tenetur, reiciendis? Consequatur magni nesciunt vel! 
-                Architecto ut dicta nesciunt quod et consequuntur corporis sed cum voluptatem quidem. 
-                Unde ea porro voluptas!
-            </p>
-        </div>
-
-        <div class="featured-article-date">
-            <p>May // Polemarch</p>
-        </div>
-
-        
-    </div>
-
-    <div class="featured-article">
-
-        <div class="featured-article-image" style="background:url('<?php the_post_thumbnail_url()?>'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div>
-
-        <div class="featured-article-body">
-            <h3>Alpha Nu's Polemarch on Watch The Yard</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Tenetur, reiciendis? Consequatur magni nesciunt vel! 
-                Architecto ut dicta nesciunt quod et consequuntur corporis sed cum voluptatem quidem. 
-                Unde ea porro voluptas!
-            </p>
-        </div>
-
-        <div class="featured-article-date">
-            <p>May // Polemarch</p>
-        </div>
-
-        
-    </div> -->
+<div class="more-news">
+    <a href="<?php echo site_url() . '/' . date('Y') ?>">More News -></a>
 </div>
 
 

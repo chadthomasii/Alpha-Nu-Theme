@@ -74,7 +74,7 @@ ul li
 ul li a {
       color: #fff;
       text-decoration: none;
-      margin: 20px 25px;
+      padding: 20px 25px;
       display: block;
       font-size: 2.5em;
       text-transform: uppercase;
@@ -130,7 +130,7 @@ nav div img
 {
     ul li a
     {
-        margin: 27px 15px;
+        padding: 27px 15px;
         font-size: 1.9em;
     }
 
@@ -140,7 +140,7 @@ nav div img
 {
     ul li a
     {
-        margin: 27px 10px;
+        padding: 27px 10px;
         font-size: 1.6em;
     }
 }
@@ -225,7 +225,7 @@ nav div img
 
     ul li a
     {
-      margin: 20px 25px;
+      padding: 20px 25px;
       font-size: 2.2em;
     }
 }
