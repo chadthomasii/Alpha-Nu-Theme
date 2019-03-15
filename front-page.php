@@ -41,7 +41,7 @@
 
             <div class="featured-article-body">
                 <h3><?php the_title(); ?></h3>
-                <?php the_excerpt(20); ?>
+                <?php the_excerpt(); ?>
             </div>
 
             <?php 

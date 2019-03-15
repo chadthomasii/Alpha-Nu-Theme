@@ -9,7 +9,7 @@
     <?php $query = new WP_Query( array( 'post_type' => 'post') ); // Post loop settings ?> 
 
     <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>            
-<a href="<?php echo get_permalink() ?>">
+        <a href="<?php echo get_permalink() ?>">
                 <div class="all-articles-single">
                     <div class="all-article-thumbnail">
                         <div class="thumbnail-image">
@@ -23,7 +23,7 @@
                         </div>
 
                         <div class="all-news-content">
-                            <p><?php echo get_the_excerpt('19')?></p>
+                            <p><?php the_excerpt()?></p>
                         </div>
                         
                         <?php 
