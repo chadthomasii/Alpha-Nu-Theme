@@ -3,9 +3,7 @@
 
 
 <!-- Get Archive Title -->
-<div class="content-heading animated fadeInDown">
-    <h1>"<?php the_archive_title() ?>"</h1>
-</div>
+<?php get_template_part('template-parts/template','heading-archive'); ?>
 
 <!-- Print Out the Posts -->
 

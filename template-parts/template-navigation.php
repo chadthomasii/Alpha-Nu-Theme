@@ -239,10 +239,11 @@ nav div img
 
 <nav 
 <?php
-    if(is_front_page())
+    if(is_home() && ! is_front_page() )
     {
         echo ' class="front-page"';
     }
+    
 ?>
 >
     

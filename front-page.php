@@ -1,34 +1,76 @@
 <?php get_header(); ?>
-    
 
+<?php get_template_part('template-parts/template','heading-news'); ?>
 
-    <?php 
-        $styleString = '';
-        $styleString .= "background-image:url('";
-        $styleString .= has_header_image() ? get_header_image() : get_theme_support( 'custom-header', 'default-image' ) . "')";
+<div class="all-news">
 
-    ?>  
+    <div class="all-articles">
 
-    <div class="overlay-landing"></div>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <a href="<?php echo get_permalink() ?>">
+                <div class="all-articles-single">
+                    <div class="all-article-thumbnail">
+                        <div class="thumbnail-image">
+                            <img src="<?php the_post_thumbnail_url() ?>"/>
+                        </div>
+                    </div>
 
-    
-    <div class="landing" style= "<?php echo $styleString ?>">
+                    <div class="all-article-content">
+                        <div class="all-news-title">
+                            <h1><?php the_title() ?></h1>
+                        </div>
 
-        <div class= "landing-content">
-
-            <?php
-                $description = html_entity_decode(get_bloginfo( 'description', 'display' ));
-                if ( $description || is_customize_preview() ) :
-            ?>
-                <h1 class= "animated fadeInUp">                    
-                    <?php echo get_theme_mod('site_title'); ?>
-                </h1>            
-            <?php endif; ?>
+                        <div class="all-news-content">
+                            <p><?php the_excerpt(20)?></p>
+                        </div>
+                        
+                        <?php 
             
-        </div>
+                            $category = get_the_category();
+                            $categories = '';
+                        
 
+                            //Get the categories of category element, loop through them
+                            for($i = 0; $i < count($category); $i++)
+                            {
+                                if($i < 2)
+                                {
+                                        //Does not add a "|" to the last element in the array
+                                    if($i != key(end($category)) || count($category) <= 1)
+                                    {
+                                        $categories .= $category[$i]->name .= " "; 
+                                    }
+
+                                    else
+                                    {
+                                        $categories .= $category[$i]->name . ' | ';
+                                    }
+                                }
+                                
+
+                            }
+
+                            
+                            // var_dump($category);
+                        ?>
+                        <div class="all-news-date">
+                            <p style="font-weight: bold;"><?php the_time('m.j.y')?> // <?php echo $categories; ?></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        <?php endwhile; endif; ?>
+        
+
+    </div>
+    
+
+
+    <div class="all-news-sidebar">
+        <h1>Sidebar</h1>
     </div>
 
 
+</div>
 
 <?php get_footer(); ?>
