@@ -18,6 +18,7 @@ function alphanu_script_enqueue()
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
 
+	//nav
 	wp_register_script( 
 				'nav', 
 				get_template_directory_uri() . '/js/nav.js', 
@@ -132,7 +133,11 @@ function alphanu_customize_register($wp_customize)
 }
 
 
-//Shortening the exceprt
+/*
+	==========================================
+	 Shortning the Excerpt
+	==========================================
+*/
 function alphanu_excerpt_length( $length ) 
 {
 	return 30;
@@ -140,8 +145,11 @@ function alphanu_excerpt_length( $length )
 
 add_filter( 'excerpt_length', 'alphanu_excerpt_length', 999 );
 
-//Removing Prefix of Archive Title
-
+/*
+	==========================================
+	 Archive Prefix
+	==========================================
+*/
 add_filter( 'get_the_archive_title', function ($title) 
 {
 
@@ -185,13 +193,69 @@ add_filter( 'get_the_archive_title', function ($title)
 
 /*
 	==========================================
+	 Infinite Scroll
+	==========================================
+*/
+
+/**
+ * Javascript for Load More
+ *
+ */
+function be_load_more_js() {
+	global $wp_query;
+	$args = array(
+		'nonce' => wp_create_nonce( 'be-load-more-nonce' ),
+		'url'   => admin_url( 'admin-ajax.php' ),
+		'query' => $wp_query->query,
+	);
+			
+	wp_enqueue_script( 'be-load-more', get_template_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
+	wp_localize_script( 'be-load-more', 'beloadmore', $args ); //Pass Object to JS file
+	
+}
+add_action( 'wp_enqueue_scripts', 'be_load_more_js' );
+
+/**
+ * AJAX Load More 
+ * Is called when POST request is received from js file
+ */
+function be_ajax_load_more() 
+{
+
+	//Gets nonce from js, which is from previous passed function
+	check_ajax_referer( 'be-load-more-nonce', 'nonce' );
+
+	//Post Params
+	$args['post_type'] = 'post';
+	$args['paged'] = esc_attr( $_POST['page'] );
+	$args['post_status'] = 'publish';
+
+	ob_start(); //Starts cached obj
+
+	$loop = new WP_Query( $args );
+
+	if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
+
+	get_template_part('template-parts/template','all-news-post'); //Formats data via template
+
+	endwhile; endif; wp_reset_postdata();
+
+	$data = ob_get_clean();
+
+	wp_send_json_success( $data ); //Passed formated data
+
+	wp_die();
+}
+
+/*
+	==========================================
 	 Add Actions
 	==========================================
 */
 
-add_action( 'wp_enqueue_scripts', 'alphanu_script_enqueue');
-add_action('init', 'alphanu_menu_setup');
-add_action('after_setup_theme', 'alphanu_theme_support');
-add_action('customize_register', 'alphanu_customize_register');
-
-
+add_action( 'wp_enqueue_scripts', 'alphanu_script_enqueue'); //JS and CSS
+add_action('init', 'alphanu_menu_setup'); //Menus
+add_action('after_setup_theme', 'alphanu_theme_support'); //Various Theme Support
+add_action('customize_register', 'alphanu_customize_register'); //Theme Customizer
+add_action( 'wp_ajax_be_ajax_load_more', 'be_ajax_load_more' ); //Infinite Load
+add_action( 'wp_ajax_nopriv_be_ajax_load_more', 'be_ajax_load_more' ); //Infinite Load

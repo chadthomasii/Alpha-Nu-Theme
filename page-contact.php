@@ -9,13 +9,13 @@
         <div class="contact-section animated flipInX">
             <h1>Chapter Related Inquiries</h1>
             <p>Antonio Rivers Jr.</p>
-            <p>antoniorivers95@gmail.com</p>
+            <p>polemarch@alphanu1933.com</p>
         </div>
 
         <div class="contact-section animated flipInX">
             <h1>Webpage Related Inquiries</h1>
             <p>Chad Thomas, II</p>
-            <p>chad.thomas.ii@gmail.com</p>
+            <p>webmaster@alphanu1933.com</p>
         </div>
     </div>
         
