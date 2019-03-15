@@ -191,6 +191,31 @@ add_filter( 'get_the_archive_title', function ($title)
 
 });
 
+
+/*
+	==========================================
+	 Sidebar Function
+	==========================================
+*/
+
+function alphanu_widget()
+{
+	register_sidebar(
+		array(
+			'name' => 'Sidebar',
+			'id' => 'sidebar-1',
+			'class' => 'all-news',
+			'description' => 'The sidebar for the news pages.',
+			
+			'before_title' => '<h1 class="widget_title">',
+			'after_title' => '</h1>'
+
+		)
+	);
+}
+
+
+
 /*
 	==========================================
 	 Infinite Scroll
@@ -257,5 +282,6 @@ add_action( 'wp_enqueue_scripts', 'alphanu_script_enqueue'); //JS and CSS
 add_action('init', 'alphanu_menu_setup'); //Menus
 add_action('after_setup_theme', 'alphanu_theme_support'); //Various Theme Support
 add_action('customize_register', 'alphanu_customize_register'); //Theme Customizer
+add_action('widgets_init', 'alphanu_widget'); //Theme Customizer
 add_action( 'wp_ajax_be_ajax_load_more', 'be_ajax_load_more' ); //Infinite Load
 add_action( 'wp_ajax_nopriv_be_ajax_load_more', 'be_ajax_load_more' ); //Infinite Load

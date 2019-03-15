@@ -71,9 +71,8 @@
     
 
 
-    <div class="all-news-sidebar">
-        <h1>Sidebar</h1>
-    </div>
+    <?php get_template_part('template-parts/template','news-sidebar'); ?>
+
 
 
 </div>

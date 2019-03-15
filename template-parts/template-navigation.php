@@ -40,7 +40,7 @@ nav
 
 
 
-ul {
+nav ul {
     margin: 0 auto;
     padding: 0;
     list-style-type: none;
@@ -58,7 +58,7 @@ ul {
 }
 
 
-ul section
+nav ul section
 {
     color: var(--main-color);
     display: inline-block;
@@ -66,12 +66,12 @@ ul section
 }
 
  
-ul li 
+nav ul li 
 {
     display: inline-block;
 }
  
-ul li a {
+nav ul li a {
       color: #fff;
       text-decoration: none;
       padding: 20px 25px;
@@ -86,28 +86,28 @@ ul li a {
     margin-right: 80px;
 }
  
-ul li:hover {
+nav ul li:hover {
     background-color: var(--main-color);
 }
 
  
-ul ul {
+nav ul ul {
       position: absolute;
       min-width: 200px;
       background: lightgrey;
       display: none;
 }
  
-ul ul li {
+nav ul ul li {
       display: block;
       background: #fff;
 }
  
-ul li:hover ul {
+nav  ul li:hover ul {
       display: block;
 }
  
-ul li i {
+nav ul li i {
       color: #fff;
       float: right;
       padding-left: 5px;
@@ -128,7 +128,7 @@ nav div img
 
 @media(max-width: 1200px) 
 {
-    ul li a
+    nav ul li a
     {
         padding: 27px 15px;
         font-size: 1.9em;
@@ -138,7 +138,7 @@ nav div img
 
 @media(max-width: 900px) 
 {
-    ul li a
+    nav ul li a
     {
         padding: 27px 10px;
         font-size: 1.6em;
@@ -223,7 +223,7 @@ nav div img
       width: 100%;
   }
 
-    ul li a
+  nav ul li a
     {
       padding: 20px 25px;
       font-size: 2.2em;
