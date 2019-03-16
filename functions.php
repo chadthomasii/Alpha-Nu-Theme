@@ -206,9 +206,11 @@ function alphanu_widget()
 			'id' => 'sidebar-1',
 			'class' => 'all-news',
 			'description' => 'The sidebar for the news pages.',
-			
 			'before_title' => '<h1 class="widget_title">',
-			'after_title' => '</h1> <hr>'
+			'after_title' => '</h1> <hr>',
+			
+
+
 
 		)
 	);
