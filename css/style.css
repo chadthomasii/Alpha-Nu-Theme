@@ -338,7 +338,7 @@ h1,h2,h3,h4,h5,h6,p,div
 
 .news-featured-image
 {
-    height: 600px;
+    height: 700px;
     width: 100%;
     position: relative;
 }
@@ -480,7 +480,7 @@ h1,h2,h3,h4,h5,h6,p,div
 .all-news
 {
     display: flex;
-    padding: 0px 100px;
+    padding: 0px 50px;
 }
 /* ARTICLES */
 
@@ -512,6 +512,8 @@ h1,h2,h3,h4,h5,h6,p,div
     padding: 20px 0px;
     height: 100%;
     box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    width: 900px;
+    max-width: 1000px;
 }
 
 
@@ -555,7 +557,7 @@ h1,h2,h3,h4,h5,h6,p,div
 .all-news-title
 {
     width: 100%;
-    height: 20%;
+    height: 25%;
     margin-bottom: 20px;
 }
 
@@ -616,19 +618,19 @@ h1,h2,h3,h4,h5,h6,p,div
                                             Media Queries
 *******************************************************************************************/
 
+@media(max-device-width: 1400px) 
+{
+    .all-articles-single
+    {
+        width: 760px;
+    }
+}
 
 @media(max-device-width: 1200px) 
 {
-    /* LANDING */
-
-    .landing-content h1
-    {
-      
-    }
+   
 
     /* OFFICERS */
-    
-
     /* Red */
 
     .officer-picture
@@ -638,10 +640,42 @@ h1,h2,h3,h4,h5,h6,p,div
 
     /* White */
 
-    
+    /* FEATURED NEWS PAGE */
+
+    .featured-article
+    {
+        height: 420px;
+        width: 270px;
+        margin: 0px 10px;
+    }
+
+    /* ALL NEWS PAGE */
+
+    .all-articles-single
+    {
+        height: 300px;
+        width: 570px;
+    }
+
+    .thumbnail-image img
+    {
+        width: 220px;
+        height: 200px;
+    }
+
+    .all-article-content h1
+    {
+        font-size: 1.5em;
+    }
+
+    .all-article-content p
+    {
+        font-size: 1em;
+    }
 
 
-    
+
+
     
 }
 
@@ -725,15 +759,71 @@ h1,h2,h3,h4,h5,h6,p,div
     {
         padding-left: 40px;
     }
+
+    /* FEATURED NEWS PAGE */
+
+    .featured-articles
+    {
+        flex-direction: column;
+    }
+
+    .featured-article
+    {
+        height: 450px;
+        width: 300px;
+        margin: 30px 0px;
+    }
+
+    /* ALL NEWS PAGE */
+
+    .all-news
+    {
+        flex-direction: column;
+    }
+
+    .all-articles
+    {
+        order: 2;
+        width: 100%;
+    }
+
+    .all-news-sidebar
+    {
+        order: 1;
+        width: 100%;
+        display: flex;
+        margin-bottom: 40px;
+    }
+
+    .all-news-sidebar li
+    {
+        width: 33.3%;
+    }
+
+    .all-news-sidebar ul li
+    {
+        text-align: center;
+        width: 100%;
+    }
+
+    .widget_recent_entries ul li
+    {
+        text-align: left;
+    }
+
+
+
+
+    .all-articles-single
+    {
+        width: 100%;
+    }
+
 }
 
 @media(max-device-width: 700px) 
 {
-    /* LANDING */
-
-    .landing-content h1
-    {
-    }
+   
 
     /* CONTACT */
     .contact-content
@@ -833,6 +923,67 @@ h1,h2,h3,h4,h5,h6,p,div
         order: 1;
     }
 
+    /* FEATURED NEWS */
+
+    .news-featured-image div h1
+    {
+        padding: 0 5%;
+        font-size: 3em;
+    }
+
+    /* ALL NEWS PAGE */
+
+
+    .thumbnail-image img
+    {
+        width: 120px;
+        height: 100px;
+    }
+
+    .all-articles-single
+    {
+        height: 245px;
+    }
+
+    .all-news-title
+    {
+        margin-bottom: 10px;
+    }
+
+    .all-article-content
+    {
+        padding-left: 20px;
+    }
+
+    .all-article-content h1
+    {
+        line-height: 25px;
+        font-size: 1.2em;
+    }
+
+    .all-article-content p
+    {
+        font-size: 0.8em;
+    }
+
+    .widget_title
+    {
+        font-size: 1.5em;
+    }
+
+    .all-news-sidebar li
+    {
+        padding: 0px 0px;
+    }
+
+    .all-news li a
+    {
+        font-size: 0.8em;
+    }
+    
+
+
+
 }
 
 @media(max-device-width: 500px) 
@@ -875,6 +1026,7 @@ h1,h2,h3,h4,h5,h6,p,div
     {
         font-size: 4em;
         padding: 0px 10px;
+        text-align: center;
     }
     .content-heading .line
     {
@@ -906,6 +1058,59 @@ h1,h2,h3,h4,h5,h6,p,div
         width: 270px;
         height: 320px;
     }
+
+    /* FEATURED NEWS */
+
+    .news-featured-image div h1
+    {
+        padding: 0 2%;
+        font-size: 2em;
+    }
+
+    .more-news a
+    {
+        font-size: 4em;
+    }
+
+    /* ALL NEWS PAGE */
+
+    .all-news
+    {
+        padding: 0px 20px;
+    }
+
+    .all-articles-single
+    {
+        height: 200px;
+    }
+    
+    .all-article-content h1
+    {
+        font-size: 0.9em;
+        line-height: 20px;
+    }
+
+    .all-article-content p
+    {
+        font-size: 0.6em;
+    }
+
+    .widget_title
+    {
+        font-size: 1em;
+    }
+
+    .widget_recent_entries ul li 
+    {
+        line-height: 15px;
+    }
+
+    .all-news-sidebar li
+    {
+        padding: 0px 0px;
+    }
+    
+
 
 
 }

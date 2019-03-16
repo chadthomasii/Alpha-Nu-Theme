@@ -208,7 +208,7 @@ function alphanu_widget()
 			'description' => 'The sidebar for the news pages.',
 			
 			'before_title' => '<h1 class="widget_title">',
-			'after_title' => '</h1>'
+			'after_title' => '</h1> <hr>'
 
 		)
 	);
@@ -233,6 +233,8 @@ function be_load_more_js() {
 		'url'   => admin_url( 'admin-ajax.php' ),
 		'query' => $wp_query->query,
 	);
+
+	
 			
 	wp_enqueue_script( 'be-load-more', get_template_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
 	wp_localize_script( 'be-load-more', 'beloadmore', $args ); //Pass Object to JS file
