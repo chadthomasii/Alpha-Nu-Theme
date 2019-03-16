@@ -135,9 +135,23 @@ function alphanu_customize_register($wp_customize)
 
 /*
 	==========================================
+	 Remove P Tags From images
+	==========================================
+*/
+
+function img_unautop($pee) {
+	$pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<div class="figure">$1</div>', $pee);
+	return $pee;
+}
+add_filter( 'the_content', 'img_unautop', 30 );
+
+
+/*
+	==========================================
 	 Shortning the Excerpt
 	==========================================
 */
+
 function alphanu_excerpt_length( $length ) 
 {
 	return 25;
