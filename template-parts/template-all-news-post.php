@@ -24,20 +24,19 @@
                 //Get the categories of category element, loop through them
                 for($i = 0; $i < count($category); $i++)
                 {
-                    if($i < 2)
-                    {
-                            //Does not add a "|" to the last element in the array
-                        if($i != key(end($category)) || count($category) <= 1)
-                        {
-                            $categories .= $category[$i]->name .= " "; 
-                        }
 
-                        else
-                        {
-                            $categories .= $category[$i]->name . ' | ';
-                        }
+                    if( $i == count($category) - 1)
+                    {
+                        $categories .= $category[$i]->name .= " "; 
+
+                    }
+                    else 
+                    {
+                        $categories .= $category[$i]->name .= " | "; 
                     }
                     
+
+
 
                 }
 
