@@ -502,7 +502,7 @@ h1,h2,h3,h4,h5,h6,p,div
 
 .all-articles a:hover
 {
-    transform: scale(1.050);
+    transform: scale(1.020);
 }
 
 .all-articles-single
@@ -512,7 +512,6 @@ h1,h2,h3,h4,h5,h6,p,div
     padding: 20px 0px;
     height: 100%;
     box-shadow: 0 1px 6px rgba(57,73,76,0.35);
-
 }
 
 
@@ -544,6 +543,7 @@ h1,h2,h3,h4,h5,h6,p,div
     font-size: 2.3em;
     font-weight: 500;
     line-height: 36px;
+    color: var(--main-color);
 
 }
 
@@ -551,9 +551,6 @@ h1,h2,h3,h4,h5,h6,p,div
 {
     font-size: 1.5em;
 }
-
-
-
 
 .all-news-title
 {
@@ -585,16 +582,36 @@ h1,h2,h3,h4,h5,h6,p,div
 
 .all-news-sidebar
 {
-    width: 30%;
+    width: 25%;
     height: 100%;
     display: inline-block;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    padding: 30px 20px;
+    margin: 0 auto;
+    background-color: var(--main-color);
 }
 
 .all-news-sidebar h1
 {
     text-align: center;
+    font-weight: 300;
+    color: #fff;
 }
 
+.all-news-sidebar li
+{
+    list-style-type: none;
+    padding: 5px 0px;
+    color: #fff;
+
+}
+
+.all-news li a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
 /*******************************************************************************************
                                             Media Queries
 *******************************************************************************************/

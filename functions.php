@@ -140,7 +140,7 @@ function alphanu_customize_register($wp_customize)
 */
 function alphanu_excerpt_length( $length ) 
 {
-	return 30;
+	return 25;
 }
 
 add_filter( 'excerpt_length', 'alphanu_excerpt_length', 999 );
