@@ -14,7 +14,7 @@ jQuery(function($){
 	};
 
 	$(window).scroll(function(){ // If the user is scrolling for KAPsi
-		if( ! loading && scrollHandling.allow ) {
+		if( ! loading && scrollHandling.allow && document.getElementsByClassName("all-articles").length) { //All articles test for dom element
 			scrollHandling.allow = false;
 			setTimeout(scrollHandling.reallow, scrollHandling.delay);  //Reset Timer
             var offset = $(button).offset().top - $(window).scrollTop();
