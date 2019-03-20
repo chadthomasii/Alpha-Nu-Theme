@@ -6,8 +6,3 @@ Author URI: https://chadthomasii.com
 Description: A custom theme written in WordPress for the Alpha Nu Chapter of Kappa Alpha Psi's web presence.
 Version: 1.0
 */
-
-body h1,h2,h3,h4,h5,h6,p
-{
-    color: var(--dark-text) !important;
-}

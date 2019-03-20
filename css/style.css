@@ -75,16 +75,26 @@ h1,h2,h3,h4,h5,h6,p,div
     width: 80%;
     margin: 0 auto;
     padding-bottom: 120px;
+    
 }
 
-.page-content h1,h2,h3,h4,h5,h6
+.page-content h1,h2,h3,h4,h5,h6,ol,ul,hr
 {
     color: var(--dark-text);
     margin-top: 20px;
     margin-bottom: 30px;
-    font-size: 50px;
+    font-weight: 300;
+
     
 }
+
+.page-content h1 {font-size: 3em;}
+.page-content h2 {font-size: 2.5em;}
+.page-content h3 {font-size: 2.17em;}
+.page-content h4 {font-size: 2em;}
+.page-content h5 {font-size: 1.83em;}
+.page-content h6 {font-size: 1.75em;}
+
 
 .page-content p
 {
@@ -95,6 +105,38 @@ h1,h2,h3,h4,h5,h6,p,div
     text-indent: 50px;
 }
 
+.page-content img
+{
+    width: 60%;
+    height: 60%;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.page-content > .figure
+{
+    text-align: center;
+}
+
+
+/* Single Page  */
+.single-title
+{
+    margin: 0 auto;
+    margin-top: 180px;
+    text-align: left;
+    width: 60%;
+}
+
+.single-title h1
+{
+    margin: 0px;
+    color: var(--main-color);
+    font-size: 4em;
+    text-align: center;
+    line-height: 65px;
+    font-weight: 300;
+}
 
 /*******************************************************************************************
                                             HOME PAGE
@@ -614,6 +656,17 @@ h1,h2,h3,h4,h5,h6,p,div
     text-decoration: none;
     font-size: 1.2em;
 }
+
+/*******************************************************************************************
+                                            Article Content
+*******************************************************************************************/
+
+.article-content
+{
+    width: 90%;
+}
+
+
 /*******************************************************************************************
                                             Media Queries
 *******************************************************************************************/
@@ -681,6 +734,19 @@ h1,h2,h3,h4,h5,h6,p,div
 
 @media(max-device-width: 900px) 
 {
+
+    /* GENERAL STYLES */
+    .single-title
+    {
+        width: 100%;
+    }
+
+    .page-content img 
+    {
+        width: 100%;
+    }
+
+
     /* LANDING */
     .landing-content h1
     {
@@ -991,9 +1057,42 @@ h1,h2,h3,h4,h5,h6,p,div
 {
     /*General Styles*/
 
+    .page-content
+    {
+        width: 90%;
+    }
+    .page-content img
+    {
+        width: 100%;
+    }
+
+    .single-title
+    {
+        width: 100%;
+    }
+
+    .single-title h1
+    {
+        font-size: 3em !important;
+    }
+    
+    .page-content h1 {font-size: 3em;}
+    .page-content h2 {font-size: 2.5em;}
+    .page-content h3 {font-size: 2.17em;}
+    .page-content h4 {font-size: 1em;}
+    .page-content h5 {font-size: 1.83em;}
+    .page-content h6 {font-size: 1.75em;}
+
+
     .page-content p
     {
+        margin-bottom: 20px;
+        font-size: 27px;
+        font-weight: 300;
+        font-family: 'Roboto';
+        text-indent: 50px;
         text-indent: 20px;
+
     }
 
     /* LANDING */
