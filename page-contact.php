@@ -8,14 +8,14 @@
 
         <div class="contact-section animated flipInX">
             <h1>Chapter Related Inquiries</h1>
-            <p>Antonio Rivers Jr.</p>
-            <p>polemarch@alphanu1933.com</p>
+            <p>Brent White III</p>
+            <p>bcwhite3@aggies.ncat.edu</p>
         </div>
 
         <div class="contact-section animated flipInX">
             <h1>Webpage Related Inquiries</h1>
-            <p>Chad Thomas, II</p>
-            <p>webmaster@alphanu1933.com</p>
+            <p>Trey Kelly</p>
+            <p>wpkelly@aggies.ncat.edu</p>
         </div>
     </div>
         
